@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue ToDo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+
+</head>
+
+<body>
+    <div class="container" id="app-4">
+        <div class="row">&nbsp;</div>
+        <div class="row">&nbsp;</div>
+        <div class="row">
+            <div class="col-md-6">
+                <form class="form-inline">
+                    <label class="sr-only" for="inlineFormInputName2">Add ToDo</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Add ToDo">
+                    <button type="button" class="btn btn-primary mb-2">Add</button>
+                </form>
+                <div class="row">&nbsp;</div>
+                <table class="table table-borderless">
+                    <thead>
+                        <th scope="col">ToDos</th>
+                        <th scope="col">Action</th>
+                    </thead>
+                    <tbody v-for="todo in todos">
+                        <tr>
+                            <td>{{todo.text}}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <div class="row">&nbsp;</div>
+                <div class="row">&nbsp;</div>
+                <div class="row">&nbsp;</div>
+                <table class="table table-borderless">
+                    <thead>
+                        <th scope="col">Completed</th>
+                    </thead>
+                    <tbody v-for="todo in todos">
+                        <tr>
+                            <td>{{todo.text}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/main.js"></script>
+
+</html>
