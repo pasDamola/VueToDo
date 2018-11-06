@@ -7,6 +7,8 @@
     <title>Vue ToDo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
 
 </head>
 
@@ -18,8 +20,8 @@
             <div class="col-md-6">
                 <form class="form-inline">
                     <label class="sr-only" for="inlineFormInputName2">Add ToDo</label>
-                    <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Add ToDo">
-                    <button type="button" class="btn btn-primary mb-2">Add</button>
+                    <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Add ToDo" ref="my_input">
+                    <button type="button" class="btn btn-primary mb-2" @click.prevent="addToDo()">Add</button>
                 </form>
                 <div class="row">&nbsp;</div>
                 <table class="table table-borderless">
@@ -27,10 +29,12 @@
                         <th scope="col">ToDos</th>
                         <th scope="col">Action</th>
                     </thead>
-                    <tbody v-for="todo in todos">
+                    <tbody v-for="todo in newToDo">
                         <tr>
                             <td>{{todo.text}}</td>
-                            <td></td>
+                            <td>
+                                <i class="fas fa-times"></i>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
