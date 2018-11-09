@@ -12,8 +12,8 @@ var app4 = new Vue({
 
 
         removeToDo: function (index) {
-            this.newToDo.splice(index, 1);
-            this.completed.push({ text: this.newToDo })
+            var popped = this.newToDo.pop(index, 1);
+            this.completed.push(popped.text);
         }
 
 
